@@ -17,20 +17,25 @@
     <meta property="og:description" content="Explora las propuestas de I CODE (EPIS UNSCH) para transformar la experiencia educativa y administrativa en el CEIS. ¡Conoce más!">
 
     <!-- Canonical Link -->
-    <link rel="canonical" href="https://inmortal175.github.io/" />
-    
-    <!-- Next Link -->
-    <link rel="next" href="https://inmortal175.github.io/i-code/page2/" />
+    <link rel="canonical" href="https://inmortal175.github.io/i-code/" />
 
     <!-- JSON-LD for Structured Data -->
     <script type="application/ld+json">
-      {
+    {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Propuestas de I CODE",
         "url": "https://inmortal175.github.io/i-code/",
-        "description": "Propuestas para mejorar la experiencia estudiantil y la administración en el CEIS."
-      }
+        "description": "Propuestas para mejorar la experiencia estudiantil y la administración en el CEIS.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "I CODE - EPIS UNSCH",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://raw.githubusercontent.com/Inmortal175/i-code/refs/heads/Farmacia/resource/img/LOGO%20ICODE%20v2%20dorado.webp"
+            }
+        }
+    }
     </script>
 
     <!-- Preconnect for Performance -->
@@ -42,625 +47,661 @@
     <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" href="./resource/img/LOGO ICODE v2 dorado.webp" type="image/x-icon">
+    <link rel="icon" href="./resource/img/favicon.webp" type="image/x-icon">
 
-    <!-- styles -->
-    <style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        .bonheur-royale-regular {
-            font-family: "Bonheur Royale", cursive;
-            font-weight: 400;
-            font-style: normal;
-        }
-        #video_background {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Asegura que el video cubra toda el área */
-            z-index: -1; /* Envía el video al fondo */
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #f0f0f0;
-            background-color: #1a1a1a;
-            max-width: 100%; /* Cambiado a 100% para mejor responsividad */
-            margin: 0 auto;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #f0f0f0;
-            background-color: #1a1a1a;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #2c2c2c;
-            color: #ebd768;
-            text-align: center;
-            padding: 1em;
-            margin-bottom: 1em;
-            border-bottom: 3px solid #ffd700;
-            view-timeline: --header;
-            view-timeline-axis: block;
-            animation-name: hide-header;
-            animation-timeline: --header;
-            animation-range: entry calc(100vh + 15%) cover calc(100vh + 25%);
-            animation-fill-mode: both;
-        }
-        @keyframes hide-header {
-            from{
-                opacity: 1;
-                scale: 100%;
-            }
-            to{
-                opacity: 0;
-                scale: 50%;
-            }
-        }
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1em;
-        }
-        .logo {
-            max-width: 200px;
-            max-height: 200px;
-        }
-        h1, h2 {
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 0.3em;
-            font-family: "Charm", cursive;
-            font-weight: 500;
-            font-style: normal;
-            margin: auto;
-            background: linear-gradient(to bottom, #b19f3e, #eee093, #b19f3e);
-            -webkit-background-clip: text; /* Clip del fondo para el texto en WebKit */
-            -webkit-text-fill-color: transparent; /* Relleno del texto transparente para mostrar el gradiente */
-        }
-
-        h3{
-            font-family: "Bonheur Royale", cursive;
-            font-weight: 500;
-            font-style: normal;
-            font-size: 40px;
-            margin: auto;
-            background: linear-gradient(to bottom, #b19f3e, #eee093, #b19f3e);
-            -webkit-background-clip: text; /* Clip del fondo para el texto en WebKit */
-            -webkit-text-fill-color: transparent; /* Relleno del texto transparente para mostrar el gradiente */
-        }
-        .cargo{
-            font-family: "Charm", cursive;
-            font-weight: 500;
-            font-style: normal;
-            color: #eee3a7;
-            font-size: 24px;
-        }
-        .proposal {
-            background-color: #2c2c2c;
-            border: 1px solid #ffd900f5;
-            border-radius: 5px;
-            padding: 1em;
-            margin-bottom: 2em;
-
-            /*bonita animacion*/
-            view-timeline: --image;
-            view-timeline-axis: block;
-            animation-timeline: --image;
-            animation-name: show-prop;
-            animation-range: entry 20% cover 27%;
-            animation-fill-mode: both;
-        }
-        @keyframes show-prop {
-            from{
-                opacity: 0;
-                scale: 25%;
-            }
-            to{
-                opacity: 1;
-                scale: 100%;
-            }
-        }
-        .proposal-content {
-            background: #363636;border-radius: 12px;
-            padding: 5px 10px;
-            overflow: auto;
-            transition: opacity 300ms ease-in, max-height 300ms ease-in; /* Transiciones para opacidad y altura */
-            scrollbar-color: rgba(255, 221, 0, 0.872) rgb(159, 159, 159);
-            scrollbar-width: thin;
-            scrollbar-gutter: stable;
-        }
-
-        /* Personalización del scrollbar en navegadores WebKit */
-::-webkit-scrollbar {
-    width: 12px; /* Ancho del scrollbar vertical */
-}
-
-::-webkit-scrollbar-track {
-    background: #595959; /* Color del track */
-    border-radius: 10px; /* Bordes redondeados */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #7f7f7f; /* Color del thumb */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 3px solid transparent; /* Espacio alrededor del thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #868585; /* Color más oscuro al pasar el mouse */
-}
-        .proposal-content.hide{
-            animation: hide-proposal 300ms forwards;
-            transition: all ease-in 300ms;
-        }
-        .proposal-content.show{
-            scroll-margin-top: 0;
-            opacity: 1;
-            max-height: 650px;
-            animation: show-proposal 300ms forwards;
-        }
-        @keyframes hide-proposal {
-            from {
-                opacity: 1;
-                max-height: 500px; /* Debe coincidir con el valor máximo cuando está visible */
-            }
-            to {
-                opacity: 0;
-                max-height: 0;
-            }
-        }
-        
-        @keyframes show-proposal {
-            from {
-                opacity: 0;
-                max-height: 0;
-            }
-            to {
-                opacity: 1;
-                max-height: 500px; /* Debe coincidir con el valor máximo cuando está visible */
-            }
-        }
-        .show-more {
-            background-color: #e9d878;
-            color: #1a1a1a;
-            border: none;
-            padding: 0.85em 1em;
-            cursor: pointer;
-            border-radius: 3px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .show-more:hover {
-            background-color: #e6c200;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            /* border: 2px solid #ffd700; */
-            mask-image: linear-gradient(black 80%, transparent);
-        }
-        footer {
-            text-align: center;
-            margin-top: 2em;
-            padding-top: 1em;
-            border-top: 2px solid #ffd700;
-            color: #f0d959;
-        }
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 2em;
-            overflow: hidden;
-            background-size: cover; /* O usa 'contain' según lo que necesites */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-            background-position: center; 
-        }
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-item {
-            min-width: 100%;
-            text-align: center;
-            height: 628px;
-            /*visibility: hidden;*/
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            position: absolute;
-            z-index: -50;
-        }
-        .carousel-item.active {
-            /*visibility: visible;*/
-            opacity: 1;
-            position: static;
-            z-index: 0;
-        }
-        .carousel-item img {
-            width: auto; /* Ajustado a 100% para responsividad */
-            height: 473px;
-            object-fit: cover;
-            border-radius: 10px; /* Cambiado para un estilo más moderno */
-            margin-bottom: 1em;
-            filter: drop-shadow(4px 4px 10px #f1e28d40); 
-        }
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #a19c7d60;
-            color: #1a1a1a;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            border-radius: 50%;
-            height: 50px;
-            width: 50px;
-        }
-        .carousel-control:hover{
-            background-color: #f1e28d;
-            background-color: #cab95a;
-        }
-        .carousel-control.prev { left: 10px; }
-        .carousel-control.next { right: 10px; }
-
-        .carousel-indicators {
-            text-align: center;
-            margin-top: 10px;
-            position: absolute; /* Posición absoluta para colocar los indicadores */
-            bottom: 41px; /* Ajusta la distancia desde la parte inferior */
-            left: 50%; /* Centra los indicadores horizontalmente */
-            transform: translateX(-50%); /* Ajusta el centro */
-            z-index: 10; /* Asegúrate de que esté por encima de las imágenes */
-            text-align: center;
-        }
-
-        .indicator {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            margin: 0 5px;
-            border-radius: 50%;
-            background-color: #ffffff71;
-            cursor: pointer;
-        }
-
-        .indicator.active {
-            background-color: #ffd700; /* Color de la bolita activa */
-        }
-        .container_equipo {
-            display: flex; /* Utiliza Flexbox para alinear los elementos en línea */
-            justify-content: space-between; /* Centra los elementos horizontalmente */
-            align-items: center; /* Centra los elementos verticalmente */
-        }
-
-        /*dota videos*/
-        .dota{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        @media only screen and (max-width: 460px) {
-            .dota{
-                flex-direction: column;
-            }
-        }
-
-        .dota .hero{
-            width: 300px;
-        }
-    </style>
+    <!-- Estilos CSS Modularizados -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="./css/video.css" />
 </head>
 <body>
-    
+    <!-- Header -->
     <header>
-        <h1>Plan de Propuestas de I CODE</h1>
-        <p>Innovación, Creatividad, Orden y Desarrollo Estudiantil (I CODE)</p>
+        <div class="logo-container">
+            <img src="./resource/img/ICODE.png" alt="Logo I CODE" class="logo">
+        </div>
+        <h1>I CODE</h1>
+        <p>Innovación, Creatividad, Orden y Desarrollo Estudiantil</p>
     </header>
 
-    <section>
-        <div class="container_equipo">
-            <div>
-                <img src="./resource/img/LOGO ICODE v2 dorado.webp" style="height: 100px;" alt="Descripción de la imagen 1">
-            </div>
-            <div style="text-align: center;">
-                <h2>Nuestro Equipo</h2>
-            </div>
-            <div>
-                <img src="./resource/img/LOGO ICODE v2 dorado.webp" style="height: 100px;" alt="Descripción de la imagen 2">
-            </div>
-        </div>
-        <div class="carousel">
-            <div class="carousel-inner">
+    <!-- Sección del Carrusel de Candidatos -->
+    <section class="container" id="candidatos">
+        <h2 class="text-center mb-2">Conoce a Nuestro Equipo</h2>
+        <div class="carousel-container">
+            <div class="carousel-wrapper" >
+                <!-- Candidato 1: Franklin Figueroa -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/FIGUEROA PEREZ, Franklin.webp" alt="Franklin Figueroa Pérez">
-                    <h3>Franklin Figueroa Pérez</h3>
+                    <div class="progress-bar"></div>
+                    <img src="./resource/img/candidatos/Uriel.webp" alt="PILLACA RODRÍGUEZ, Uriel Carlos">
+                    <h2>PILLACA RODRÍGUEZ, Uriel Carlos</h2>
                     <p class="cargo">Presidente</p>
+                    <a href="./candidatos/presidente.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 2: Vicepresidente -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img1.webp" alt="Miembro 2" loading="lazy">
-                    <h3>Nombre Completo</h3>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/FIGUEROA PEREZ, Franklin.webp" alt="FIGUEROA PEREZ, Franklin" loading="lazy">
+                    <h2>FIGUEROA PEREZ, Franklin</h2>
                     <p class="cargo">Vicepresidente</p>
+                    <a href="./candidatos/vicepresidente.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 3: Orlando Nilupu -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img2.webp" alt="Miembro 3" loading="lazy">
-                    <h3>Orlando Paul, Nilupu Palomino</h3>
-                    <p class="cargo">Coordinador académico</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Rodrigo.webp" alt="PILLACA CABRERA, Rodrigo Gerardo " loading="lazy">
+                    <h2>PILLACA CABRERA, Rodrigo Gerardo </h2>
+                    <p class="cargo">Coordinador Académico</p>
+                    <a href="./candidatos/Coordinador_academico.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 4: Coordinador de Actas -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img1.webp" alt="Miembro 4" loading="lazy">
-                    <h3>Nombre Completo</h3>
-                    <p class="cargo">Coordinador de actas y acuerdos</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Helder.webp" alt="Coordinador de Actas" loading="lazy">
+                    <h2>LEON CARDENAS, José Helder</h2>
+                    <p class="cargo">Coordinador de Actas y Acuerdos</p>
+                    <a href="./candidatos/Coordinador_de_actas.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 5: Coordinador de Economía -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img2.webp" alt="Miembro 5" loading="lazy">
-                    <h3>Nombre Completo</h3>
-                    <p class="cargo">Coordinador de economía y desarrollo</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Robert.webp" alt="PILLACA CHOQUEHUANCA, Robert" loading="lazy">
+                    <h2>PILLACA CHOQUEHUANCA, Robert</h2>
+                    <p class="cargo">Coordinador de Economía y Desarrollo</p>
+                    <a href="./candidatos/Coordinador_de_economia.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 6: Roy Gomez -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img1.webp" alt="Miembro 6" loading="lazy">
-                    <h3>Roy Brayam, Gomez Prado</h3>
-                    <p class="cargo">Coordinador de prensa y propaganda</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Henry.webp" alt="FLORES SARAS, Henry Josué" loading="lazy">
+                    <h2>FLORES SARAS, Henry Josué</h2>
+                    <p class="cargo">Coordinador de Prensa y Propaganda</p>
+                    <a href="./candidatos/Coordinador_de_prensa.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 7: Jhony Sulca -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img2.webp" alt="Miembro 7" loading="lazy">
-                    <h3>Jhony Alberto, Sulca Mendoza</h3>
-                    <p class="cargo">Coordinador de relaciones públicas</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Juan.webp" alt="TINOCO GAMBOA, Juan Smith" loading="lazy">
+                    <h2>TINOCO GAMBOA, Juan Smith</h2>
+                    <p class="cargo">Coordinador de Relaciones Públicas</p>
+                    <a href="./candidatos/Coordinador_de_relaciones_publicas.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 8: Angel Huamaní -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img1.webp" alt="Miembro 8" loading="lazy">
-                    <h3>Angel Omar, Huamaní Gutierrez</h3>
-                    <p class="cargo">Coordinador de deportes (1)</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Jhornan.webp" alt="FIGUEROA ORTEGA, Jhornan Feddy" loading="lazy">
+                    <h2>FIGUEROA ORTEGA, Jhornan Feddy</h2>
+                    <p class="cargo">Coordinador de Deportes (1)</p>
+                    <a href="./candidatos/Coordinador_de_deportes_1.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 9: Oscar Bautista -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img2.webp" alt="Miembro 9" loading="lazy">
-                    <h3>Oscar Abel, Bautista Ayala</h3>
-                    <p class="cargo">Coordinador de deportes (2)</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Dany.webp" alt="ROJAS DE LA CRUZ, Dany Dosato" loading="lazy">
+                    <h2>ROJAS DE LA CRUZ, Dany Dosato</h2>
+                    <p class="cargo">Coordinador de Deportes (2)</p>
+                    <a href="./candidatos/Coordinador_de_deportes_2.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 10: Fredy Bonilla -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img1.webp" alt="Miembro 10" loading="lazy">
-                    <h3>Fredy Arturo, Bonilla Rey</h3>
-                    <p class="cargo">Coordinador de eventos culturales</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Yidel.webp" alt="HUAMANI CHANCOS, Yidel" loading="lazy">
+                    <h2>HUAMANI CHANCOS, Yidel</h2>
+                    <p class="cargo">Coordinador de Eventos Culturales</p>
+                    <a href="./candidatos/Coordinador_de_eventos_culturales.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
+
+                <!-- Candidato 11: Ana Rodrigo -->
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/img2.webp" alt="Miembro 11" loading="lazy">
-                    <h3>Ana Gabriela, Rodrigo Cutipa</h3>
-                    <p class="cargo">Vocalía</p>
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Cesar.webp" alt="LEON REYNA, Cesar Antonio" loading="lazy">
+                    <h2>LEON REYNA, Cesar Antonio</h2>
+                    <p class="cargo">Vocalía (1)</p>
+                    <a href="./candidatos/vocal_1.html" class="btn-perfil">Ver Perfil Completo</a>
                 </div>
-                <!-- Repite este bloque para los 9 miembros restantes -->
+
+                <!-- Candidato 12: Ana Rodrigo -->
+                <div class="carousel-item">
+                    <div class="progress-bar"></div>
+                    <img data-src="./resource/img/candidatos/Nilton.webp" alt="AGUIRRE BARO, Nilton" loading="lazy">
+                    <h2>AGUIRRE BARO, Nilton</h2>
+                    <p class="cargo">Vocalía (2)</p>
+                    <a href="./candidatos/vocal_2.html" class="btn-perfil">Ver Perfil Completo</a>
+                </div>
             </div>
-            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+            
+            <!-- Controles del Carrusel -->
+            <button class="carousel-control prev" onclick="moveCarousel(-1)" aria-label="Candidato anterior">&#10094;</button>
+            <button class="carousel-control next" onclick="moveCarousel(1)" aria-label="Siguiente candidato">&#10095;</button>
+            
+            <!-- Indicadores -->
             <div class="carousel-indicators">
-                <span class="indicator active" onclick="setSlide(0)"></span>
-                <span class="indicator" onclick="setSlide(1)"></span><span class="indicator" onclick="setSlide(2)"></span><span class="indicator" onclick="setSlide(3)"></span><span class="indicator" onclick="setSlide(4)"></span><span class="indicator" onclick="setSlide(5)"></span><span class="indicator" onclick="setSlide(6)"></span><span class="indicator" onclick="setSlide(7)"></span><span class="indicator" onclick="setSlide(8)"></span><span class="indicator" onclick="setSlide(9)"></span><span class="indicator" onclick="setSlide(10)"></span>
-                <!-- Agrega más indicadores según el número de elementos en el carrusel -->
+                <span class="indicator active" onclick="setSlide(0)" aria-label="Ir al candidato 1"></span>
+                <span class="indicator" onclick="setSlide(1)" aria-label="Ir al candidato 2"></span>
+                <span class="indicator" onclick="setSlide(2)" aria-label="Ir al candidato 3"></span>
+                <span class="indicator" onclick="setSlide(3)" aria-label="Ir al candidato 4"></span>
+                <span class="indicator" onclick="setSlide(4)" aria-label="Ir al candidato 5"></span>
+                <span class="indicator" onclick="setSlide(5)" aria-label="Ir al candidato 6"></span>
+                <span class="indicator" onclick="setSlide(6)" aria-label="Ir al candidato 7"></span>
+                <span class="indicator" onclick="setSlide(7)" aria-label="Ir al candidato 8"></span>
+                <span class="indicator" onclick="setSlide(8)" aria-label="Ir al candidato 9"></span>
+                <span class="indicator" onclick="setSlide(9)" aria-label="Ir al candidato 10"></span>
+                <span class="indicator" onclick="setSlide(10)" aria-label="Ir al candidato 11"></span>
+                <span class="indicator" onclick="setSlide(11)" aria-label="Ir al candidato 12"></span>
             </div>
         </div>
     </section>
 
-    <main id="list-proposal">
-        <section class="proposal">
-            <h2>Propuesta 1: Sistema de Control de Asistencia</h2>
-            <p>Implementación de un sistema digital de control de asistencias basado en códigos QR.</p>
-            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+    <!-- Propuestas -->
+    <main id="list-proposal" class="container">
+        <h2 class="text-center mb-2">Nuestras Propuestas</h2>
+
+        <!-- Propuesta 1 -->
+        <section class="proposal" style="text-align: justify;">
+            <h2>Plan integral de visibilización, posicionamiento y organización de ferias tecnológicas</h2>
+            <button class="toggle-btn">Ver más</button>
             <div class="proposal-content hide">
                 <h3>Justificación:</h3>
-                <p>Actualmente, las asistencias se registran manualmente en papel, lo cual es ineficiente para más de 500 estudiantes. Un sistema digital permitirá un registro rápido y fiable.</p>
+                <p>La carrera profesional de Ingeniería de Sistemas carece de la visibilidad necesaria, lo que afecta la percepción de su importancia, limita las oportunidades de empleo para los egresados y reduce el apoyo institucional y externo. La ausencia de infraestructura adecuada para una carrera líder en tecnología es crítica y debe ser visibilizada urgentemente para que las autoridades comprendan y actúen. Esta propuesta busca revertir esta situación, posicionando la carrera como una referencia tecnológica y fortaleciendo vínculos con el sector productivo y académico.</p>
                 <h3>Objetivos:</h3>
-                <ul>
-                    <li>Implementar un sistema digital de control de asistencias.</li>
-                    <li>Mejorar la transparencia y precisión en el seguimiento de la asistencia.</li>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Crear una página web oficial y un comité de visibilización.</li>
+                    <li>Organizar al menos 2 eventos y obtener 3 alianzas estratégicas con empresas y universidades en el primer año.</li>
+                    <li>Hacer uso de recursos propios, voluntarios y apoyo de la universidad para la ejecución.</li>
+                    <li>Fortalecer la imagen y relevancia de la carrera para mejorar empleabilidad y recursos.</li>
+                    <li>Implementar el plan completo en un plazo máximo de 12 meses.</li>
                 </ul>
                 <h3>Metodología:</h3>
-                <ul>
-                    <li>Desarrollar una versión mejorada del sistema existente (versión 2.0).</li>
-                    <li>Iniciar la implementación durante el primer mes del año académico.</li>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Formación del comité de visibilización con representantes de estudiantes, profesores y exalumnos durante el primer mes.</li>
+                    <li>Desarrollo y lanzamiento de la página web oficial de la EPIS en 3 meses, incluyendo secciones de noticias, eventos, y bolsa de trabajo.</li>
+                    <li>Diseño de un plan de comunicación digital (redes sociales, correo electrónico) en el segundo mes.</li>
+                    <li>Organización de al menos 4 eventos (ferias de empleo, talleres, conferencias) durante el año para promover la carrera.</li>
+                    <li>Creación y difusión de material promocional audiovisual y digital.</li>
+                    <li>Establecimiento de alianzas con al menos 5 empresas y universidades dentro del año para fortalecer la empleabilidad y colaboración académica.</li>
                 </ul>
-                <!-- <img src="/api/placeholder/400/300" alt="Prototipo del sistema de asistencia"> -->
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/proto/0aneN6e8wWrL56r8ci5Zgt/UI-ASSISTANCE-IS?page-id=0%3A1&node-id=10-357&node-type=frame&viewport=1036%2C422%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A357&embed-host=share" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section class="proposal">
-            <h2>Propuesta 2: Sistema de Matrícula Digital para Laboratorios de la EPIS</h2>
-            <p>Desarrollo e implementación de un sistema de matrícula digital para los laboratorios.</p>
-            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
-            <div class="proposal-content hide">
-                <h3>Justificación:</h3>
-                <p>El proceso actual de matrícula en hojas de Excel genera largas colas y es ineficiente. Un sistema digital optimizará la gestión de los laboratorios.</p>
-                <h3>Objetivo:</h3>
-                <p>Desarrollar e implementar un sistema de matrícula digital que permita a los estudiantes registrarse de forma rápida y sencilla para los laboratorios.</p>
-                <h3>Metodología:</h3>
-                <ul>
-                    <li>Implementar un sistema basado en un prototipo ya desarrollado en Figma.</li>
-                    <li>Finalizar la implementación en los primeros tres o cuatro meses del semestre académico.</li>
+                <p>Para el desarrollo de la propuesta se plantea una metodología basada en actividades participativas y organizativas:</p>
+                <h4>Planificación y Organización del Evento:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Conformación de un comité organizador integrado por docentes, estudiantes y egresados.</li>
+                    <li>Elaboración del cronograma, presupuesto y logística del evento.</li>
+                    <li>Definición de categorías de participación (desarrollo web, apps móviles, videojuegos, proyectos de IA, prototipos tecnológicos, etc.).</li>
                 </ul>
-                <!-- <img src="/api/placeholder/400/300" alt="Prototipo del sistema de matrícula"> -->
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="500" src="https://embed.figma.com/proto/VGbBb9XSCjhLyYn9ONQ9Vs/SIMALAB-EPIS?page-id=0%3A1&node-id=1-2&node-type=frame&viewport=738%2C510%2C1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&embed-host=share" allowfullscreen></iframe>
+                <h4>Convocatoria y Difusión:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Lanzamiento de convocatorias internas para estudiantes y egresados.</li>
+                    <li>Difusión del evento mediante redes sociales, página institucional y alianzas con instituciones educativas.</li>
+                    <li>Coordinación con colegios, institutos y empresas locales para su asistencia o participación.</li>
+                </ul>
+                <h4>Ejecución de la Feria Tecnológica:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Instalación de stands para presentación de proyectos.</li>
+                    <li>Realización de demostraciones en vivo, talleres abiertos y charlas breves.</li>
+                    <li>Evaluación de proyectos (opcional) por un comité técnico para destacar iniciativas innovadoras.</li>
+                </ul>
+                <h4>Evaluación y Retroalimentación:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Recolección de opiniones de participantes y asistentes mediante encuestas.</li>
+                    <li>Análisis de impacto en visibilidad, participación y percepción de la carrera.</li>
+                    <li>Elaboración de un informe final con recomendaciones para futuras ediciones.</li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <!-- Propuesta 2 -->
+        <section class="proposal" style="text-align: justify;">
+            <h2>Programas de capacitación, talleres y cursos certificados</h2>
+            <button class="toggle-btn">Ver más</button>
+            <div class="proposal-content hide">
+                <h3>Justificación:</h3>
+                <p>La rápida evolución de la tecnología y la demanda del mercado laboral hacen necesario que los estudiantes de ingeniería se mantengan actualizados en habilidades técnicas y blandas. Existe alta demanda en cursos tecnológicos, pero muchos estudiantes no tienen acceso a capacitaciones orientadas al mercado laboral. Ofrecer programas de capacitación y talleres accesibles a todos los estudiantes fomentará el aprendizaje práctico, el crecimiento profesional y generará ingresos sostenibles para el centro de estudiantes.</p>
+                
+                <h3>Objetivos:</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Capacitar a los estudiantes en habilidades técnicas que complementen su formación académica.</li>
+                    <li>Facilitar el acceso al conocimiento mediante cursos libres abiertos a todos los alumnos de la escuela profesional de Ingeniería de Sistemas.</li>
+                    <li>Promover el aprendizaje colaborativo, permitiendo que estudiantes de diferentes disciplinas se beneficien de conocimientos diversos.</li>
+                    <li>Ofrecer formación técnica accesible a los estudiantes.</li>
+                    <li>Generar ingresos regulares para financiar actividades académicas.</li>
+                    <li>Elevar el perfil profesional de la comunidad estudiantil.</li>
+                </ul>
+                
+                <h3>Metodología:</h3>
+                <h4>Identificación de Temas:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Recoger información sobre los intereses y necesidades de capacitación de los estudiantes a través de encuestas.</li>
+                    <li>Seleccionar temas relevantes como programación, bases de datos, ciberseguridad, y habilidades blandas.</li>
+                    <li>Organizar 2 o más talleres por semestre.</li>
+                    <li>Seleccionar instructores internos o externos.</li>
+                </ul>
+                
+                <h4>Colaboración con Expertos:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Contactar a docentes y profesionales del sector para que ofrezcan talleres prácticos sobre sus áreas de especialización.</li>
+                    <li>Fomentar el aprendizaje práctico a través de ejercicios y proyectos.</li>
+                </ul>
+                
+                <h4>Inscripciones Abiertas:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Promover los cursos y talleres mediante redes sociales y carteles en la facultad y universidad.</li>
+                    <li>Cobro simbólico entre S/ 10 a S/ 25 por participante.</li>
+                    <li>Emitir constancias digitales.</li>
+                </ul>
+                
+                <h4>Evaluación Continua:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Implementar evaluaciones al finalizar cada taller para recoger retroalimentación y mejorar futuros programas.</li>
+                </ul>
             </div>
         </section>
 
-        <section class="proposal">
-            <h2>Propuesta 3: Correo Institucional para el CEIS</h2>
-            <p>Implementación de un correo institucional para centralizar las comunicaciones y solicitudes.</p>
-            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+        <!-- Propuesta 3 -->
+         <section class="proposal" style="text-align: justify;">
+            <h2>Desarrollar e implementar un Sistema de Matrícula Digital para la Escuela (EPIS – UNSCH)</h2>
+            <button class="toggle-btn">Ver más</button>
             <div class="proposal-content hide">
-                <h3>Justificación:</h3>
-                <p>Las comunicaciones actuales a través de WhatsApp dificultan el seguimiento y la formalización de las solicitudes. Un correo institucional garantizará una comunicación fluida y profesional.</p>
-                <h3>Objetivo:</h3>
-                <p>Implementar un correo institucional (con dominio ceis@unsch.edu.pe) para centralizar las comunicaciones y solicitudes de los estudiantes hacia el CEIS.</p>
-                <h3>Metodología:</h3>
-                <p>Realizar los trámites correspondientes para obtener el correo institucional durante la primera semana del período académico.</p>
-                <video id="video_background" autoplay loop muted>
-                    <source src="./resource\img\video\bgdigital.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
-            
-            </div>
-        </section>
+                <h3>Justificación</h3>
+                <p>La EPIS actualmente realiza procesos de matrícula con métodos manuales, poco eficientes y que no reflejan el nivel tecnológico propio de una carrera de Ingeniería de Sistemas.</p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Largas colas de estudiantes que buscan asegurar un cupo.</li>
+                    <li>Procesos poco transparentes y sujetos a errores humanos.</li>
+                    <li>Desorganización en la asignación de laboratorios.</li>
+                    <li>Pérdida de tiempo y desgaste físico tanto para estudiantes como docentes.</li>
+                    <li>Falta de coherencia institucional al no aplicar tecnología en una escuela tecnológica.</li>
+                </ul>
+                <p>Además, existen precedentes negativos en semestres anteriores, donde la ausencia de un sistema digital generó malestar, problemas logísticos y situaciones injustas para los estudiantes.</p>
+                <p>Dado que ya se cuenta con el análisis de requerimientos y el diseño en Figma, existe un avance real y sólido para iniciar el desarrollo.</p>
+                <p>Con un equipo comprometido, el sistema puede implementarse en aproximadamente 6 meses, beneficiando directamente a toda la comunidad EPIS.</p>
+                <p>Implementar este sistema permitirá modernizar a la escuela, optimizar procesos y alinear la gestión académica con la naturaleza tecnológica de la carrera.</p>
 
-        <section class="proposal">
-            <h2>Propuesta 4: Elaboración de Poleras Americanas (estilo bomber) para la Carrera de Ingeniería de Sistemas</h2>
-            <p>Diseño y confección de poleras distintivas para los estudiantes de Ingeniería de Sistemas.</p>
-            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
-            <div class="proposal-content hide">
-                <h3>Justificación:</h3>
-                <p>La carrera carece de un símbolo distintivo que refuerce el sentido de pertenencia. Las poleras tipo "Bomber" brindarán identidad y servirán como vestimenta adecuada para eventos académicos y deportivos.</p>
-                <h3>Objetivo:</h3>
-                <p>Diseñar y confeccionar poleras para los estudiantes de Ingeniería de Sistemas mediante un concurso de diseño participativo.</p>
-                <h3>Metodología:</h3>
-                <ol>
-                    <li>Realizar un concurso de diseño abierto a todos los estudiantes durante las dos primeras semanas del año académico.</li>
-                    <li>Votación virtual para elegir el diseño ganador durante la tercera semana.</li>
-                    <li>Cotización y confección de las poleras para los estudiantes interesados.</li>
-                </ol>
-                <img src="./resource/img/poleras.webp" alt="Polera estilo bomber">
-            </div>
-        </section>
+                <h3>Objetivo</h3>
+                <p>Implementar en un plazo de 6 meses un Sistema de Matrícula Digital funcional para la EPIS – UNSCH que permita automatizar el proceso de inscripción en cursos y laboratorios, garantizando equidad, transparencia y eficiencia.</p>
 
-        <section class="proposal">
-            <h2>Propuesta 5: Campeonato de dota 2, Super Smash Bros y demás</h2>
-            <p>Diseño y confección de poleras distintivas para los estudiantes de Ingeniería de Sistemas.</p>
-            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
-            <div class="proposal-content hide">
-                <h3>Justificación:</h3>
-                <p>La carrera carece de un símbolo distintivo que refuerce el sentido de pertenencia. Las poleras tipo "Bomber" brindarán identidad y servirán como vestimenta adecuada para eventos académicos y deportivos.</p>
-                <h3>Objetivo:</h3>
-                <p>Diseñar y confeccionar poleras para los estudiantes de Ingeniería de Sistemas mediante un concurso de diseño participativo.</p>
-                <h3>Metodología:</h3>
-                <ol>
-                    <li>Realizar un concurso de diseño abierto a todos los estudiantes durante las dos primeras semanas del año académico.</li>
-                    <li>Votación virtual para elegir el diseño ganador durante la tercera semana.</li>
-                    <li>Cotización y confección de las poleras para los estudiantes interesados.</li>
-                </ol>
-                <div class="dota">
-                    <video class="hero" width="640" height="360" muted autoplay loop>
-                        <source src="./resource/img/video/invoker.webm" type="video/webm">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>        <video class="hero" width="640" height="360" muted autoplay loop>
-                        <source src="./resource/img/video/lina.webm" type="video/webm">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
+                <h3>Metodología</h3>
+                <p>La metodología de trabajo estará basada en un enfoque ágil, orientado a resultados, con entregas iterativas y validación continua.</p>
+                <p>Fases:</p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Revisión técnica del material existente</li>
+                    <li>Revisión del análisis de requerimientos.</li>
+                    <li>Ajustes al diseño en Figma si es necesario.</li>
+                    <li>Diseño de Base de Datos</li>
+                    <li>Modelamiento relacional.</li>
+                    <li>Normalización.</li>
+                    <li>Pruebas de consistencia.</li>
+                    <li>Desarrollo por módulos (Metodología Ágil – Scrum)</li>
+                    <li>Sprints de 2 semanas.</li>
+                    <li>Reuniones de avance y revisión.</li>
+                    <li>Construcción progresiva del backend y frontend.</li>
+                    <li>Pruebas</li>
+                    <li>Pruebas unitarias.</li>
+                    <li>Pruebas de integración.</li>
+                    <li>Pruebas con usuarios reales (estudiantes y docentes).</li>
+                    <li>Corrección y ajustes.</li>
+                    <li>Despliegue del sistema</li>
+                    <li>Configuración del servidor.</li>
+                    <li>Seguridad y control de acceso.</li>
+                    <li>Ejecución del plan piloto.</li>
+                    <li>Capacitación y documentación</li>
+                    <li>Manuales para estudiantes y docentes.</li>
+                    <li>Videos cortos de uso.</li>
+                    <li>Soporte durante el primer proceso de matrícula.</li>
+                </ul>
+                
+                <div>
+                    <Figure>
+                        <img src="./resource/img/simalab.png" alt="hello" >
+                    </Figure>
                 </div>
             </div>
         </section>
+
+
+
+        <!-- Propuesta 4 -->
+        <section class="proposal" style="text-align: justify;">
+            <h2>Impulsar y consolidar la investigación académica en la Escuela Profesional de Ingeniería de Sistemas</h2>
+            <button class="toggle-btn">Ver más</button>
+            <div class="proposal-content hide">
+                <h3>Justificación:</h3>
+                <p>Actualmente la carrera cuenta con un antecedente positivo como el Círculo de Investigación en Inteligencia Artificial y Sistemas Inteligentes (CIIASI), pero es necesario ampliar y diversificar las líneas de investigación para fortalecer la generación de conocimiento y posicionar la carrera como un referente académico. En el contexto actual, obtener solo un título ya no basta; los profesionales deben contar con especialización y experiencia investigativa para destacar en el mercado laboral. Esta propuesta fomenta la cultura de investigación, mejora la calidad académica y promueve la diferenciación profesional, acorde a las tendencias y demandas del sector tecnológico.</p>
+                
+                <h3>Objetivos:</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Concientizar a los estudiantes sobre la importancia de la investigación.</li>
+                    <li>Crear y consolidar al menos tres grupos de investigación adicionales en líneas estratégicas de la ingeniería de sistemas.</li>
+                    <li>Lograr la participación activa de 30 estudiantes y 5 docentes en actividades investigativas y publicaciones académicas en el año.</li>
+                    <li>Apoyar la formación y capacitación de docentes y alumnos, con el respaldo de la universidad y convenios con otras instituciones.</li>
+                    <li>Fortalecer la identidad académica y la competitividad de la carrera mediante el desarrollo científico.</li>
+                    <li>Establecer estos grupos, iniciar proyectos y publicar resultados en los próximos 12 meses.</li>
+                </ul>
+                
+                <h3>Metodología:</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Diagnóstico y priorización de áreas emergentes para investigación dentro de la carrera durante el primer mes.</li>
+                    <li>Convocatoria y formación de nuevos grupos de investigación con estudiantes y docentes interesados durante el segundo mes.</li>
+                    <li>Capacitación en metodologías de investigación y elaboración de proyectos científicos.</li>
+                    <li>Planificación y ejecución de proyectos de investigación aplicados, con resultados concretos (publicaciones, prototipos, eventos académicos).</li>
+                    <li>Establecimiento de redes y colaboraciones con universidades, centros de investigación y empresas para soporte y difusión.</li>
+                    <li>Promoción permanente dentro de la comunidad universitaria para atraer nuevos investigadores y dar visibilidad a los avances.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Propuesta 5 -->
+         <section class="proposal" style="text-align: justify;">
+            <h2>Sistema web transparente para gestión económica del CEIS</h2>
+            <button class="toggle-btn">Ver más</button>
+            <div class="proposal-content hide">
+                <h3>Justificación:</h3>
+                <p>Actualmente, la falta de información clara y oportuna sobre el manejo de los recursos económicos por parte del CEIS genera desconfianza y especulaciones entre los estudiantes. La rendición de cuentas al final del año no es suficiente para garantizar transparencia y mantener una comunicación fluida con la comunidad estudiantil. Esta propuesta busca implementar una plataforma digital que permita consultar en tiempo real el estado financiero del CEIS, fortaleciendo así la transparencia y mejorando la relación entre representantes y estudiantes.</p>
+                
+                <h3>Objetivos:</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Crear una página web con acceso restringido (sólo acceden estudiantes de EPIS) que muestre en tiempo real ingresos y gastos del CEIS.</li>
+                    <li>Alcanzar un 80% de participación estudiantil revisando la plataforma durante el primer semestre.</li>
+                    <li>Utilizar herramientas tecnológicas accesibles y un equipo de desarrollo formado por estudiantes o colaboradores técnicos.</li>
+                    <li>Mejorar la confianza y comunicación dentro de la comunidad estudiantil.</li>
+                    <li>Desarrollo e implementación en un plazo máximo de 30 días.</li>
+                    <li>Propuesta para institucionalizar el uso del sistema en siguientes gobiernos estudiantiles para asegurar la transparencia permanente.</li>
+                </ul>
+                
+                <h3>Metodología:</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Análisis de requerimientos y diseño del sistema en la primera semana.</li>
+                    <li>Desarrollo de la plataforma web con sistema de autenticación por correo electrónico durante las siguientes tres semanas.</li>
+                    <li>Pruebas y ajustes para garantizar funcionalidad y seguridad.</li>
+                    <li>Lanzamiento oficial y capacitación a estudiantes sobre el uso de la plataforma.</li>
+                    <li>Monitoreo continuo y recopilación de retroalimentación para mejoras futuras.</li>
+                </ul>
+                <Figure>
+                    <img src="./resource/img/finance.png" alt="hello" >
+                </Figure>
+            </div>
+        </section>
+
+        <!-- Propuesta 6 -->
+         <section class="proposal" style="text-align: justify;">
+            <h2>Actividades Integradas de deporte y recreación</h2>
+            <button class="toggle-btn">Ver más</button>
+            <div class="proposal-content hide">
+                <h3>Justificación:</h3>
+                <p>La desunión entre las distintas escuelas de la Facultad de Ingeniería (Minería, Civil, Sistemas y Físico Matemáticas) limita las oportunidades de colaboración y el desarrollo de una comunidad académica sólida. La cohesión social y el bienestar emocional son fundamentales para el éxito académico. Fomentar actividades culturales y recreativas entre las escuelas promueve la integración, reduce el estrés y mejora la calidad de vida de los estudiantes. La falta de implementos deportivos para las prácticas deportivas que se realizan en la escuela y la necesidad de apoyo a deportistas que representan a la carrera son problemas que requieren atención inmediata.</p>
+                
+                <h3>Objetivos:</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Fomentar la integración entre los estudiantes de diversas escuelas a través de actividades recreativas.</li>
+                    <li>Promover el bienestar emocional y el equilibrio entre estudio y ocio.</li>
+                    <li>Fortalecer la comunidad estudiantil, creando vínculos más sólidos entre compañeros.</li>
+                    <li>Promover la integración entre estudiantes de diferentes escuelas a través de actividades deportivas y académicas.</li>
+                    <li>Fomentar el aprendizaje y el intercambio de conocimientos mediante cursos libres abiertos a todos los estudiantes de la facultad.</li>
+                    <li>Crear un ambiente de camaradería que incentive la participación activa y el sentido de pertenencia entre los estudiantes.</li>
+                    <li>Garantizar la disponibilidad de implementos deportivos adecuados y en buen estado para mejorar la calidad de las prácticas deportivas de los estudiantes de la Escuela Profesional de Ingeniería de Sistemas.</li>
+                    <li>Promover la creación de grupos deportivos como el futsal, voley, basquet, E-sports, otros deportes asociados con otras escuelas profesionales.</li>
+                    <li>Brindar apoyo integral a los estudiantes deportistas que representan a la Escuela Profesional de Ingeniería de Sistemas y a la universidad, con el fin de mejorar su rendimiento, participación y desempeño en competencias internas y externas.</li>
+                    <li>Fortalecer la presencia y el apoyo estudiantil en los juegos interescolares mediante la organización de barras representativas que cuenten con cánticos, materiales de apoyo y una identidad visual clara.</li>
+                </ul>
+                
+                <h3>Metodología:</h3>
+                
+                <h4>Organización de Eventos Deportivos:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Realizar campeonatos de deportes como fútbol y vóley, así como torneos de ajedrez para fomentar la participación.</li>
+                    <li>Abrir inscripciones a todos los estudiantes de la escuela para fortalecer la competencia entre diferentes escuelas.</li>
+                </ul>
+                
+                <h4>Organización de Torneos:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Realizar campeonatos de fútbol, vóley y ajedrez en diferentes fechas para maximizar la participación.</li>
+                    <li>Las inscripciones estarán disponibles para todos los estudiantes de la facultad, favoreciendo la participación de diversas escuelas y fomentando la competencia amistosa.</li>
+                </ul>
+                
+                <h4>Promoción de Eventos:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Utilizar carteles, redes sociales y grupos estudiantiles para difundir los eventos, garantizando una amplia convocatoria.</li>
+                </ul>
+                
+                <h4>Actividades Recreativas y Culturales:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Organizar talleres de arte, música y teatro que promuevan la creatividad y el trabajo en equipo.</li>
+                    <li>Facilitar actividades que involucren a estudiantes en la planificación y ejecución, promoviendo el desarrollo de habilidades organizativas.</li>
+                </ul>
+                
+                <h4>Cursos Académicos Libres:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Selección de Temas: Identificar cursos relevantes como programación, bases de datos y otros temas según la demanda estudiantil.</li>
+                    <li>Colaboración con Profesores: Trabajar en conjunto con docentes de las diferentes escuelas para facilitar la enseñanza de estos cursos.</li>
+                    <li>Inscripciones Libres: Permitir la inscripción para todos los estudiantes de la facultad, promoviendo el acceso a la formación teórica y práctica.</li>
+                </ul>
+                
+                <h4>Adquisición de implementos deportivos:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Pedir un pequeño aporte a los estudiantes o usar los fondos del CEIS para poder comprar los implementos deportivos.</li>
+                    <li>Ir a cotizar implementos deportivos para ver la calidad.</li>
+                    <li>Realizar las compras de acuerdo a la cotización.</li>
+                </ul>
+                
+                <h4>Promover la creación de grupos deportivos:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Reclutar a alumnos con experiencia previa o que ya participan en los equipos de la escuela para ayudar en los deportes.</li>
+                    <li>Difundir una convocatoria abierta a todos los ciclos mediante redes sociales y grupos internos a la escuela profesional y luego a otras escuelas profesionales.</li>
+                    <li>Proponer días de práctica donde estén disponibles.</li>
+                    <li>Brindarle implementos deportivos para que puedan usarlos en sus prácticas.</li>
+                </ul>
+                
+                <h4>Apoyo a Deportistas:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Apoyo a los deportistas que van a representar la carrera y la universidad: Los estudiantes que necesiten se pueden acercar al CEIS para poder explicarnos sobre el apoyo que necesitan.</li>
+                    <li>El CEIS se encargará de tomar en cuenta lo necesitado para poder darle un apoyo de acuerdo a su necesidad.</li>
+                </ul>
+                
+                <h4>Organización de barras más organizadas:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Realizar una convocatoria abierta para estudiantes interesados en integrar la barra representativa.</li>
+                    <li>Designar un coordinador general y responsables por áreas: cánticos, materiales, logística y disciplina.</li>
+                    <li>Establecer un grupo oficial de comunicación para organizar ensayos y actividades.</li>
+                    <li>Comprar algunos materiales para el apoyo del equipo.</li>
+                </ul>
+                
+                <h4>Promoción y Difusión:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Utilizar diversos canales de comunicación para promocionar estos eventos y actividades, asegurando que todos estén informados y motivados para participar.</li>
+                </ul>
+                
+                <h4>Evaluación de Impacto:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Recolectar opiniones y sugerencias de los participantes después de cada actividad para medir el impacto y ajustar futuras iniciativas.</li>
+                </ul>
+                
+                <h4>Evaluación y Retroalimentación:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Al final de cada actividad, se realizará una evaluación para recoger opiniones y sugerencias de los participantes, lo que permitirá mejorar futuros eventos y actividades.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Propuesta 7 -->
+        <section class="proposal" style="text-align: justify;">
+            <h2>Actividades Culturales en la semana Jubilar</h2>
+            <button class="toggle-btn">Ver más</button>
+            <div class="proposal-content hide">
+                <h3>Justificación</h3>
+                <p>Se ha observado que la mayoría de los estudiantes de nuestra carrera no se conocen o socializan adecuadamente. Incluso las actividades como danzas Inter-series y presentaciones culturales en la Semana Jubilar ya no se dan desde hace par de años. Viendo esa necesidad de nuestra comunidad de ingeniería de sistemas queremos revalorar y realzarlo para una formación integral de cada uno y fortalecer los lazos sociales entre estudiantes de cada serie.</p>
+                
+                <h3>Objetivos</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>La revaloración de la cultura en ingeniería de sistemas para fortalecer la integración social entre estudiantes de diferentes series.</li>
+                    <li>Organizar presentaciones culturales durante la Semana Jubilar.</li>
+                </ul>
+                
+                <h3>Metodología</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Establecer ambientes aptos para que las actividades culturales se den de manera satisfactoria.</li>
+                    <li>Realizar estas actividades en la semana jubilar en organización conjunta con los estudiantes de la EPIS y trabajo activo con los presidentes de cada serie.</li>
+                    <li>Definir premios simbólicos para diseminar la participación activa.</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- propuesta 8 -->
+         <section class="proposal" style="text-align: justify;">
+            <h2>"Sistemas en tu Cole": Programa de Intervención Tecnológica</h2>
+            <button class="toggle-btn">Ver más</button>
+            <div class="proposal-content hide">
+                <h3>Justificación:</h3>
+                <p>La carrera de Ingeniería de Sistemas presenta una limitada visibilidad en la región de Ayacucho, lo que afecta su reconocimiento ante la comunidad, instituciones educativas y empresas privadas. Frente a ello, se propone realizar actividades itinerantes en colegios bajo el programa "Sistemas en tu Cole", donde estudiantes y egresados de la Escuela Profesional realizan demostraciones tecnológicas, talleres básicos y presentaciones motivacionales.</p>
+                <p>Esta propuesta requiere una mínima inversión económica, ya que utiliza recursos disponibles (laptops, proyectores, material digital) y se ejecuta con apoyo voluntario de estudiantes. Además, genera un impacto significativo al acercar la tecnología a los jóvenes, fortalecer la vocación por carreras STEM y demostrar de manera práctica las competencias que se desarrollan en Ingeniería de Sistemas.</p>
+                <p>Asimismo, el programa contribuye a que las empresas privadas de Ayacucho conozcan el talento y las capacidades reales de los estudiantes a través de la difusión en redes sociales y la presencia pública que generan estas actividades. Esto refuerza la imagen institucional y abre oportunidades para alianzas, prácticas preprofesionales y proyectos conjuntos, mejorando así la vinculación entre la academia y el sector productivo.</p>
+                
+                <h3>Objetivos:</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Incrementar la visibilidad y el posicionamiento de la Escuela Profesional de Ingeniería de Sistemas mediante la realización de actividades tecnológicas en instituciones educativas de Ayacucho.</li>
+                </ul>
+                
+                <h3>Metodología:</h3>
+                <h4>Planificación:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Coordinación con directores de colegios para establecer un cronograma de visitas.</li>
+                    <li>Selección de estudiantes expositores y elaboración de demostraciones sencillas (apps, páginas web, prototipos).</li>
+                    <li>Preparación de material audiovisual y recursos digitales de difusión.</li>
+                </ul>
+                
+                <h4>Ejecución:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Desarrollo de charlas motivacionales sobre la carrera de Ingeniería de Sistemas.</li>
+                    <li>Realización de demostraciones tecnológicas accesibles (webs, apps, mini proyectos de IA, videojuegos simples).</li>
+                    <li>Impartición de talleres cortos para que los estudiantes elaboren un proyecto básico.</li>
+                    <li>Registro de participación e intereses vocacionales.</li>
+                </ul>
+                
+                <h4>Difusión y Enlace con Empresas:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Publicación en redes sociales institucionales de las actividades realizadas.</li>
+                    <li>Visibilización del talento estudiantil para que empresas privadas conozcan la capacidad formativa de la carrera.</li>
+                    <li>Generación de contactos con empresas que muestren interés en prácticas o colaboraciones.</li>
+                </ul>
+                
+                <h4>Evaluación:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Aplicación de encuestas cortas a docentes y alumnos de los colegios visitados.</li>
+                    <li>Medición del alcance en redes sociales.</li>
+                    <li>Análisis del interés generado en posibles alianzas empresariales.</li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Call to Action -->
+    <section class="container text-center mt-2 mb-2">
+        <h2>¿Por qué votar por I CODE?</h2>
+        <p style="font-size: 1.2rem; margin: 1em 0;">Somos estudiantes comprometidos con el cambio real. Nuestras propuestas están diseñadas por y para estudiantes, enfocadas en mejorar tu experiencia universitaria.</p>
+        <p style="color: var(--color-primary); font-size: 1.3rem; font-weight: bold;">Marca el símbolo de I CODE para un futuro mejor.</p>
+    </section>
+
+    <!-- videos -->
+        <div id="main-container">
+    <div class="video-fragment">
+      <h2 class="video-title">Instrucción para miembros de mesa</h2>
+      <div class="video-container">
+        <video id="video" preload="metadata" src="https://www.onpe.gob.pe/capacitacion/tareas-miembros-mesa.mp4"></video>
+        
+        <button id="centerPlayPauseBtn" class="center-play-btn" aria-label="Reproducir o pausar video">
+          <i class="fas fa-play"></i>
+        </button>
+
+        <div class="controls">
+          <button id="playPauseBtn" aria-label="Reproducir o pausar video"><i class="fas fa-play"></i></button>
+          <input type="range" id="progressBar" min="0" max="100" value="0" aria-label="Barra de progreso del video" />
+          <button id="muteBtn" aria-label="Silenciar o activar sonido"><i class="fas fa-volume-up"></i></button>
+          <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1" aria-label="Control de volumen" />
+          <button id="fullScreenBtn" aria-label="Pantalla completa"><i class="fas fa-expand"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2024 I CODE - Innovación, Creatividad, Orden y Desarrollo Estudiantil. Todos los derechos reservados.</p>
+        <div class="flex flex-between flex-wrap gap-2">
+            <!-- Logotipo y Eslogan -->
+            <div style="flex: 1; min-width: 200px;">
+                <h2>I CODE</h2>
+                <p>Innovación, Creatividad, Orden y Desarrollo Estudiantil</p>
+            </div>
+            
+            <!-- Redes Sociales -->
+            <div style="flex: 1; min-width: 150px;">
+                <h2>Síguenos</h2>
+                <ul>
+                    <li>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-tiktok"></i> TikTok
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Enlaces Útiles -->
+            <div style="flex: 1; min-width: 150px;">
+                <h2>Enlaces Útiles</h2>
+                <ul>
+                    <li>
+                        <a href="https://www.onpe.gob.pe/capacitacion/tareas-miembros-mesa.mp4" target="_blank" rel="noopener noreferrer">
+                            ONPE - Miembros de Mesa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.unsch.edu.pe/" target="_blank" rel="noopener noreferrer">
+                            UNSCH
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="text-center">
+            <p>© 2025 I CODE - Todos los derechos reservados.</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5em;">
+                Desarrollado con <span style="color: var(--color-primary);">♥</span> por el equipo de I CODE
+            </p>
+        </div>
     </footer>
 
-    <script>
-        //lazy loading
-            document.addEventListener("DOMContentLoaded", function () {
-                const lazyImages = document.querySelectorAll("img[data-src]");
-        
-                if ("IntersectionObserver" in window) {
-                    const observer = new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                img.src = img.dataset.src;
-                                img.removeAttribute("data-src");
-                                observer.unobserve(img);
-                            }
-                        });
-                    });
-        
-                    lazyImages.forEach(img => {
-                        observer.observe(img);
-                    });
-                } else {
-                    // Fallback para navegadores antiguos
-                    lazyImages.forEach(img => {
-                        img.src = img.dataset.src;
-                        img.removeAttribute("data-src");
-                    });
-                }
-            });//end
-        
-        
-        const slides = document.querySelectorAll('.carousel-item');
-        const totalSlides = slides.length;
-        let currentSlide = totalSlides - 1;
-
-        function moveCarousel(direction) {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-                slides[currentSlide].classList.add('active');
-                updateIndicators();
-        }
-
-        function setSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = index;
-            slides[currentSlide].classList.add('active');
-            updateIndicators();
-        }
-
-        function updateIndicators() {
-            const indicators = document.querySelectorAll('.indicator');
-            indicators.forEach((indicator, idx) => {
-                indicator.classList.toggle('active', idx === currentSlide);
-            });
-        }
-
-        // Cambiar automáticamente las imágenes del carrusel
-        function autoChangeSlide() {
-            moveCarousel(1);
-            setTimeout(autoChangeSlide, 5000); // Cambia la imagen cada 5 segundos
-        }
-
-        autoChangeSlide();
-        function toggleContent(button) {
-            const content = button.nextElementSibling;
-            const parent = button.parentElement;
-            const Proposals = document.getElementById("list-proposal").children; //lista de propuestas
-
-
-
-            Array.from(Proposals).forEach((proposal) => {
-                let prop_content = proposal.children[3]; //contenido de propuesta
-                let buttons = proposal.children[2]; //boton ver más
-                if(prop_content.classList.contains("show")){
-                    if(prop_content !== content){
-                        prop_content.classList.remove("show")
-                        prop_content.classList.add("hide")
-                        buttons.innerText = "Ver más"
-                    };
-                };
-            });
-
-            if (content.classList.contains("hide")){
-                content.classList.remove("hide")
-                content.classList.add("show")
-                button.innerText = "Ver menos"
-                setTimeout(() => {
-                let rectParent = parent.getBoundingClientRect();
-
-                const offset = window.pageYOffset || document.documentElement.scrollTop;
-                // Calcular la posición absoluta del contenedor en relación con el documento
-                const targetPosition = rectParent.top + offset; // Ajustar la posición
-                // Desplazarse a la posición del contenedor
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth' // Desplazamiento suave
-                });
-                }, 320)
-            }else{
-                content.classList.remove("show");
-                content.classList.add("hide")
-                button.innerText = "Ver más"
-            }
-        }
-    </script>
+    <!-- Scripts Modularizados -->
+    <script src="./js/candidatos-data.js"></script>
+    <script src="./js/lazy-loading.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/proposals.js"></script>
+    <script src="./js/video.js"></script>
 </body>
 </html>
