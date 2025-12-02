@@ -59,8 +59,30 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/carousel.css">
     <link rel="stylesheet" href="./css/video.css" />
+
+    <!-- Precargar imágenes críticas -->
+    <link rel="preload" as="image" href="./resource/img/LOGO ICODE v2 dorado.webp">
+    <link rel="preload" as="image" href="./resource/img/candidatos/FIGUEROA PEREZ, Franklin.webp">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ffd700">
 </head>
 <body>
+    <!-- service worker -->
+     <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        // console.log('✅ Service Worker registrado:', registration.scope); 
+                    })
+                    .catch(error => {
+                        console.error('Error al registrar Service Worker:', error);
+                    });
+            });
+        }
+    </script>
     <!-- Header -->
     <header>
         <div class="logo-container">
@@ -78,7 +100,7 @@
                 <!-- Candidato 1: Franklin Figueroa -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img src="./resource/img/candidatos/Uriel.webp" alt="PILLACA RODRÍGUEZ, Uriel Carlos">
+                    <img date-src="./resource/img/candidatos/Uriel.webp" alt="PILLACA RODRÍGUEZ, Uriel Carlos">
                     <h2>PILLACA RODRÍGUEZ, Uriel Carlos</h2>
                     <p class="cargo">Presidente</p>
                     <a href="./candidatos/presidente.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -87,7 +109,7 @@
                 <!-- Candidato 2: Vicepresidente -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/FIGUEROA PEREZ, Franklin.webp" alt="FIGUEROA PEREZ, Franklin" loading="lazy">
+                    <img data-src="./resource/img/candidatos/FIGUEROA PEREZ, Franklin.webp" alt="FIGUEROA PEREZ, Franklin" >
                     <h2>FIGUEROA PEREZ, Franklin</h2>
                     <p class="cargo">Vicepresidente</p>
                     <a href="./candidatos/vicepresidente.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -96,7 +118,7 @@
                 <!-- Candidato 3: Orlando Nilupu -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Rodrigo.webp" alt="PILLACA CABRERA, Rodrigo Gerardo " loading="lazy">
+                    <img data-src="./resource/img/candidatos/Rodrigo.webp" alt="PILLACA CABRERA, Rodrigo Gerardo " >
                     <h2>PILLACA CABRERA, Rodrigo Gerardo </h2>
                     <p class="cargo">Coordinador Académico</p>
                     <a href="./candidatos/Coordinador_academico.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -105,7 +127,7 @@
                 <!-- Candidato 4: Coordinador de Actas -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Helder.webp" alt="Coordinador de Actas" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Helder.webp" alt="Coordinador de Actas" >
                     <h2>LEON CARDENAS, José Helder</h2>
                     <p class="cargo">Coordinador de Actas y Acuerdos</p>
                     <a href="./candidatos/Coordinador_de_actas.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -114,7 +136,7 @@
                 <!-- Candidato 5: Coordinador de Economía -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Robert.webp" alt="PILLACA CHOQUEHUANCA, Robert" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Robert.webp" alt="PILLACA CHOQUEHUANCA, Robert" >
                     <h2>PILLACA CHOQUEHUANCA, Robert</h2>
                     <p class="cargo">Coordinador de Economía y Desarrollo</p>
                     <a href="./candidatos/Coordinador_de_economia.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -123,7 +145,7 @@
                 <!-- Candidato 6: Roy Gomez -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Henry.webp" alt="FLORES SARAS, Henry Josué" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Henry.webp" alt="FLORES SARAS, Henry Josué" >
                     <h2>FLORES SARAS, Henry Josué</h2>
                     <p class="cargo">Coordinador de Prensa y Propaganda</p>
                     <a href="./candidatos/Coordinador_de_prensa.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -132,7 +154,7 @@
                 <!-- Candidato 7: Jhony Sulca -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Juan.webp" alt="TINOCO GAMBOA, Juan Smith" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Juan.webp" alt="TINOCO GAMBOA, Juan Smith" >
                     <h2>TINOCO GAMBOA, Juan Smith</h2>
                     <p class="cargo">Coordinador de Relaciones Públicas</p>
                     <a href="./candidatos/Coordinador_de_relaciones_publicas.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -141,7 +163,7 @@
                 <!-- Candidato 8: Angel Huamaní -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Jhornan.webp" alt="FIGUEROA ORTEGA, Jhornan Feddy" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Jhornan.webp" alt="FIGUEROA ORTEGA, Jhornan Feddy" >
                     <h2>FIGUEROA ORTEGA, Jhornan Feddy</h2>
                     <p class="cargo">Coordinador de Deportes (1)</p>
                     <a href="./candidatos/Coordinador_de_deportes_1.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -150,7 +172,7 @@
                 <!-- Candidato 9: Oscar Bautista -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Dany.webp" alt="ROJAS DE LA CRUZ, Dany Dosato" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Dany.webp" alt="ROJAS DE LA CRUZ, Dany Dosato" >
                     <h2>ROJAS DE LA CRUZ, Dany Dosato</h2>
                     <p class="cargo">Coordinador de Deportes (2)</p>
                     <a href="./candidatos/Coordinador_de_deportes_2.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -159,7 +181,7 @@
                 <!-- Candidato 10: Fredy Bonilla -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Yidel.webp" alt="HUAMANI CHANCOS, Yidel" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Yidel.webp" alt="HUAMANI CHANCOS, Yidel" >
                     <h2>HUAMANI CHANCOS, Yidel</h2>
                     <p class="cargo">Coordinador de Eventos Culturales</p>
                     <a href="./candidatos/Coordinador_de_eventos_culturales.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -168,7 +190,7 @@
                 <!-- Candidato 11: Ana Rodrigo -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Cesar.webp" alt="LEON REYNA, Cesar Antonio" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Cesar.webp" alt="LEON REYNA, Cesar Antonio" >
                     <h2>LEON REYNA, Cesar Antonio</h2>
                     <p class="cargo">Vocalía (1)</p>
                     <a href="./candidatos/vocal_1.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -177,7 +199,7 @@
                 <!-- Candidato 12: Ana Rodrigo -->
                 <div class="carousel-item">
                     <div class="progress-bar"></div>
-                    <img data-src="./resource/img/candidatos/Nilton.webp" alt="AGUIRRE BARO, Nilton" loading="lazy">
+                    <img data-src="./resource/img/candidatos/Nilton.webp" alt="AGUIRRE BARO, Nilton" >
                     <h2>AGUIRRE BARO, Nilton</h2>
                     <p class="cargo">Vocalía (2)</p>
                     <a href="./candidatos/vocal_2.html" class="btn-perfil">Ver Perfil Completo</a>
@@ -364,7 +386,7 @@
                 
                 <div>
                     <Figure>
-                        <img src="./resource/img/simalab.png" alt="hello" >
+                        <img date-src="./resource/img/simalab.png" alt="SIMALAB" >
                     </Figure>
                 </div>
             </div>
@@ -429,7 +451,7 @@
                     <li>Monitoreo continuo y recopilación de retroalimentación para mejoras futuras.</li>
                 </ul>
                 <Figure>
-                    <img src="./resource/img/finance.png" alt="hello" >
+                    <img date-src="./resource/img/finance.png" alt="finance" >
                 </Figure>
             </div>
         </section>

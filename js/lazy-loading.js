@@ -62,7 +62,7 @@ class LazyLoader {
     }
     
     /**
-     * Carga una imagen específica
+     * Carga una imagen específica con reintentos
      * @param {HTMLImageElement} img - Elemento de imagen a cargar
      */
     loadImage(img) {
@@ -71,42 +71,51 @@ class LazyLoader {
         
         if (!src) return;
         
-        // Crear una nueva imagen para precargar
-        const imageLoader = new Image();
+        // Configuración de reintentos
+        const maxRetries = 3;
+        let retryCount = 0;
         
-        imageLoader.onload = () => {
-            // Aplicar la imagen cargada
-            img.src = src;
+        const attemptLoad = () => {
+            const imageLoader = new Image();
             
-            if (srcset) {
-                img.srcset = srcset;
-            }
+            imageLoader.onload = () => {
+                img.src = src;
+                
+                if (srcset) {
+                    img.srcset = srcset;
+                }
+                
+                img.removeAttribute('data-src');
+                img.removeAttribute('data-srcset');
+                img.classList.add('loaded');
+                
+                if (this.observer) {
+                    this.observer.unobserve(img);
+                }
+                
+                img.dispatchEvent(new CustomEvent('lazyloaded', {
+                    detail: { src }
+                }));
+            };
             
-            // Remover atributos data
-            img.removeAttribute('data-src');
-            img.removeAttribute('data-srcset');
+            imageLoader.onerror = () => {
+                retryCount++;
+                if (retryCount < maxRetries) {
+                    console.warn(`⚠️ Reintentando cargar imagen (${retryCount}/${maxRetries}):`, src);
+                    // Reintentar después de un delay exponencial
+                    setTimeout(attemptLoad, 1000 * Math.pow(2, retryCount - 1));
+                } else {
+                    console.error(`❌ Error al cargar imagen después de ${maxRetries} intentos:`, src);
+                    img.classList.add('error');
+                    // Mostrar imagen placeholder
+                    img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300"%3E%3Crect width="300" height="300" fill="%232c2c2c"/%3E%3Ctext x="50%25" y="50%25" fill="%23ffd700" text-anchor="middle" dy=".3em"%3EI CODE%3C/text%3E%3C/svg%3E';
+                }
+            };
             
-            // Añadir clase de cargado
-            img.classList.add('loaded');
-            
-            // Dejar de observar esta imagen
-            if (this.observer) {
-                this.observer.unobserve(img);
-            }
-            
-            // Disparar evento personalizado
-            img.dispatchEvent(new CustomEvent('lazyloaded', {
-                detail: { src }
-            }));
+            imageLoader.src = src;
         };
         
-        imageLoader.onerror = () => {
-            console.error(`Error al cargar imagen: ${src}`);
-            img.classList.add('error');
-        };
-        
-        // Iniciar la carga
-        imageLoader.src = src;
+        attemptLoad();
     }
     
     /**
